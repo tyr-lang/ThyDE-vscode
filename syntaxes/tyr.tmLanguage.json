@@ -1,0 +1,83 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Type Research Language",
+	"patterns": [
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#stringsRaw"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"constants": {
+			"patterns": [{
+				"name": "constant.language",
+				"match": "\\b(false|true|null)\\b"
+			},{
+				"name": "constant.numeric",
+				"match": "(((-?\\d+)|(0x[0-9a-fA-F]+))((i\\d?)|L|U|(u\\d*))?)|(-\\d*\\.\\d+([eE]-?\\d+)?(f\\d*)?)"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line",
+				"match":  "(//).*$"
+			},{
+				"name": "comment.block",
+				"begin":"/\\*",
+				"end":"\\*/"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tyr",
+				"match": "\\b(catch|do|else|if|return|switch|try|while)\\b"
+			},{
+				"name": "keyword.operator",
+				"match": "\\b(:|:=|=|<:)\\b"
+			},{
+				"name": "keyword.control.other",
+				"match": "\\b(var|val|def|test|new|delete)\\b"
+			}]
+		},
+		"storage": {
+			"patterns": [{
+				"name": "storage.type",
+				"match": "\\b(type|class|interface|property)\\b"
+			},{
+				"name": "storage.modifier",
+				"match": "\\b(public|protected|private|override)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.tyr",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tyr",
+					"match": "\\\\."
+				}
+			]
+		},
+		"stringsRaw": {
+			"name": "string.quoted.triple.tyr",
+			"begin": "\"\"\"",
+			"end": "\"\"\""
+		}
+	},
+	"scopeName": "file"
+}
