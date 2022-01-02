@@ -1,6 +1,7 @@
 {
     "name": "thyde",
     "publisher": "feldentm",
+    "private": true,
     "displayName": "ThyDE",
     "description": "Tyr Development Environment",
     "version": "0.2.0",
