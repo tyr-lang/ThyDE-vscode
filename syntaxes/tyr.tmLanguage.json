@@ -28,7 +28,7 @@
 				"match": "\\b(false|true|null)\\b"
 			},{
 				"name": "constant.numeric",
-				"match": "(((-?\\d+)|((0x)?[0-9a-fA-F]+))((i\\d?)|L|U|(u\\d*))?)|(-\\d*\\.\\d+([eE]-?\\d+)?(f\\d*)?)"
+				"match": "(((-?\\d+)|((0x)?[0-9a-fA-F]+))((i\\d*)|L|U|(u\\d*))?)|(-\\d*\\.\\d+([eE]-?\\d+)?(f\\d*)?)"
 			}]
 		},
 		"comments": {
