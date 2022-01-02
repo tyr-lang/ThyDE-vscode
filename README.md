@@ -10,6 +10,11 @@ It is free as in free market.
 
 This plugin can be installed from the VSCode market place.
 
+Install VisualStudio Code.
+Associate .tyr files with it.
+Open a .tyr file and let it search a matching extension.
+Install this plugin from the suggested list.
+
 
 ## Features
 
