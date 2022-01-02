@@ -19,18 +19,13 @@ jobs:
     name: Release and publish
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.1
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Vscode release plugin
-        uses: JCofman/vscodeaction@master
-        env:
-          PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          args: publish -p $PUBLISHER_TOKEN 
+          node-version: 16
+      - run: npm ci
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.PUBLISHER_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
