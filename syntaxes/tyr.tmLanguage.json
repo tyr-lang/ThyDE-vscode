@@ -56,7 +56,7 @@
 		"storage": {
 			"patterns": [{
 				"name": "storage.type",
-				"match": "\\b(type|class|interface|property)\\b"
+				"match": "\\b(enum|type|class|interface|property)\\b"
 			},{
 				"name": "storage.modifier",
 				"match": "\\b(public|protected|private|override)\\b"
