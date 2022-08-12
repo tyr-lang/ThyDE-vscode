@@ -44,7 +44,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.tyr",
-				"match": "\\b(catch|do|else|if|return|switch|try|while)\\b"
+				"match": "\\b(catch|do|else|if|return|switch|try|while|break|continue)\\b"
 			},{
 				"name": "keyword.operator",
 				"match": "\\b(:|:=|=|<:)\\b"
