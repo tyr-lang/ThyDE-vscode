@@ -62,6 +62,17 @@
 				"match": "\\b(public|protected|private|override)\\b"
 			}]
 		},
+		"characters": {
+			"name": "string.quoted.single.tyr",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tyr",
+					"match": "\\\\."
+				}
+			]
+		},
 		"strings": {
 			"name": "string.quoted.double.tyr",
 			"begin": "\"",
