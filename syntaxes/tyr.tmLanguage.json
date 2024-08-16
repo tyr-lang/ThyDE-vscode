@@ -50,7 +50,7 @@
 				"match": "\\b(:|:=|=|<:)\\b"
 			},{
 				"name": "keyword.control.other",
-				"match": "\\b(var|val|def|test|new|delete|extern|with)\\b"
+				"match": "\\b(var|val|let|def|test|new|delete|extern|with)\\b"
 			}]
 		},
 		"storage": {
