@@ -15,9 +15,6 @@
 			"include": "#storage"
 		},
 		{
-			"include": "#variables"
-		},
-		{
 			"include": "#stringsRaw"
 		},
 		{
@@ -31,6 +28,9 @@
 		},
 		{
 			"include": "#operators"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
@@ -46,7 +46,8 @@
 		"comments": {
 			"patterns": [{
 				"name": "comment.line",
-				"match": "(//).*$"
+				"begin":"//",
+				"end":"$"
 			},{
 				"name": "comment.block.documentation",
 				"begin":"/\\*\\*",
@@ -123,7 +124,7 @@
 			"patterns": [
 				{
 					"name": "punctuation.separator",
-					"match": "\\b(,|\\.|;\\b"
+					"match": "\\b(,|\\.|;)\\b"
 				}
 			]
 		},
