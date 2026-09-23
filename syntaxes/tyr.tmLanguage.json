@@ -124,7 +124,7 @@
 			"patterns": [
 				{
 					"name": "punctuation.separator",
-					"match": "\\b(,|\\.|;)\\b"
+					"match": ",|\\.|;"
 				}
 			]
 		},
@@ -132,7 +132,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator",
-					"match": "\\b([\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e]+)\\b"
+					"match": "[\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e]+"
 				}
 			]
 		}
