@@ -4,9 +4,9 @@
     "private": true,
     "displayName": "ThyDE",
     "description": "Tyr Development Environment",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "engines": {
-        "vscode": "^1.56.0"
+        "vscode": "^1.135.0"
     },
     "categories": [
         "Programming Languages"
