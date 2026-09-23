@@ -2,7 +2,6 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Type Research Language",
 	"scopeName": "source.tyr",
-	"fileTypes": [".tyr"],
 	"patterns": [
 		{
 			"include": "#comments"
