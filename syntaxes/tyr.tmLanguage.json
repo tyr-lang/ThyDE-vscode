@@ -122,30 +122,6 @@
 		"punctuation": {
 			"patterns": [
 				{
-					"name": "punctuation.definition.block",
-					"match": "\\{"
-				},
-				{
-					"name": "punctuation.definition.block",
-					"match": "\\}"
-				},
-				{
-					"name": "punctuation.definition.parameters",
-					"match": "\\("
-				},
-				{
-					"name": "punctuation.definition.parameters",
-					"match": "\\)"
-				},
-				{
-					"name": "punctuation.definition.bracket",
-					"match": "\\["
-				},
-				{
-					"name": "punctuation.definition.bracket",
-					"match": "\\]"
-				},
-				{
 					"name": "punctuation.separator",
 					"match": "\\b(,|\\.|;\\b"
 				}
