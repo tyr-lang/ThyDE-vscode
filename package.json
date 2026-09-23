@@ -8,7 +8,7 @@
     "private": true,
     "displayName": "ThyDE",
     "description": "Tyr Development Environment",
-    "version": "0.2.16",
+    "version": "0.2.17",
     "engines": {
         "vscode": "^1.135.0"
     },
