@@ -45,13 +45,17 @@
 		},
 		"comments": {
 			"patterns": [{
-				"name": "comment.line",
+				"name": "comment.line.double-slash",
 				"begin":"//",
 				"end":"$"
 			},{
 				"name": "comment.block.documentation",
 				"begin":"/\\*\\*",
-				"end":"\\*/"
+				"end":"\\*/",
+				"patterns": [{
+					"name": "variable.other",
+					"match": "(?<=(\\*|\\* ))@[^: ]+(?=(:| ) ))"
+				}]
 			},{
 				"name": "comment.block",
 				"begin":"/\\*",
@@ -64,7 +68,7 @@
 				"match": "\\b(break|catch|continue|do|else|finally|if|return|switch|throw|try|while)\\b"
 			},{
 				"name": "keyword.operator",
-				"match": "\\b(:|:=|=|<:)\\b"
+				"match": "(?<!(\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e))(:|:=|=|<:)(?!(\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e))"
 			},{
 				"name": "keyword.control.other",
 				"match": "\\b(var|val|let|def|test|new|delete|extern|with)\\b"
@@ -82,14 +86,14 @@
 		"variables": {
 			"patterns": [{
 				"name": "variable.other.tyr",
-				"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*|`[^`]+`)\\b"
+				"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b|`[^`]+`"
 			}]
 		},
 		"characters": {
 			"patterns": [
 				{
 					"name": "keyword.operator",
-					"match": "\\b`[\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e]+`\\b"
+					"match": "`[\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003a\\u003c-\\u0040\\u005c\\u005e\\u007c\\u007e]+`"
 				},
 				{
 					"name": "constant.character.literal",
