@@ -8,7 +8,7 @@
     "private": true,
     "displayName": "ThyDE",
     "description": "Tyr Development Environment",
-    "version": "0.2.17",
+    "version": "0.2.18",
     "engines": {
         "vscode": "^1.135.0"
     },
@@ -24,7 +24,7 @@
         }],
         "grammars": [{
             "language": "tyr",
-            "scopeName": "file",
+            "scopeName": "source.tyr",
             "path": "./syntaxes/tyr.tmLanguage.json"
         }]
     }
