@@ -24,6 +24,14 @@ jobs:
         with:
           node-version: 24
       - run: npm install
+
+      - name: Install test dependencies
+        run: npm install --no-save vscode-tmgrammar-test
+
+      - name: Run Grammar Test
+        # Ersetze den Pfad zur deiner Grammatikdatei (z.B. syntaxes/your.tmLanguage.json)
+        run: npx vscode-tmgrammar-test ./syntaxes/tyr.tmLanguage.json
+
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
