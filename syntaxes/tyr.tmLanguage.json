@@ -2,40 +2,19 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Type Research Language",
 	"scopeName": "source.tyr",
+	"fileTypes": [".tyr"],
 	"patterns": [
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#characters"
-		},
-		{
-			"include": "#literals"
-		},
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#storage"
-		},
-		{
-			"include": "#types"
-		},
-		{
-			"include": "#modifiers"
-		},
-		{
-			"include": "#punctuation"
-		},
-		{
-			"include": "#operators"
-		},
-		{
-			"include": "#identifiers"
-		}
+		{ "include": "#comments" },
+		{ "include": "#strings" },
+		{ "include": "#characters" },
+		{ "include": "#literals" },
+		{ "include": "#keywords" },
+		{ "include": "#storage" },
+		{ "include": "#types" },
+		{ "include": "#modifiers" },
+		{ "include": "#punctuation" },
+		{ "include": "#operators" },
+		{ "include": "#identifiers" }
 	],
 	"repository": {
 		"comments": {
@@ -45,10 +24,7 @@
 					"begin": "//",
 					"end": "$",
 					"patterns": [
-						{
-							"name": "punctuation.definition.comment.tyr",
-							"match": "//"
-						}
+						{ "name": "punctuation.definition.comment.tyr", "match": "//" }
 					]
 				},
 				{
@@ -56,18 +32,9 @@
 					"begin": "/\\*\\*",
 					"end": "\\*/",
 					"patterns": [
-						{
-							"name": "punctuation.definition.comment.tyr",
-							"match": "/\\*\\*|\\*/"
-						},
-						{
-							"name": "entity.other.attribute-name.tag.doc.tyr",
-							"match": "@[a-zA-Z_][a-zA-Z0-9_]*(?=\\s|:|$)"
-						},
-						{
-							"name": "variable.parameter.doc.tyr",
-							"match": "@[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\-)"
-						}
+						{ "name": "punctuation.definition.comment.tyr", "match": "/\\*\\*|\\*/" },
+						{ "name": "entity.other.attribute-name.tag.doc.tyr", "match": "@[a-zA-Z_][a-zA-Z0-9_]*(?=\\s|:|$)" },
+						{ "name": "variable.parameter.doc.tyr", "match": "@[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\-)" }
 					]
 				},
 				{
@@ -75,10 +42,7 @@
 					"begin": "/\\*",
 					"end": "\\*/",
 					"patterns": [
-						{
-							"name": "punctuation.definition.comment.tyr",
-							"match": "/\\*|\\*/"
-						}
+						{ "name": "punctuation.definition.comment.tyr", "match": "/\\*|\\*/" }
 					]
 				}
 			]
@@ -90,10 +54,7 @@
 					"begin": "\"\"\"",
 					"end": "\"\"\"",
 					"patterns": [
-						{
-							"name": "constant.character.escape.tyr",
-							"match": "\\\\."
-						}
+						{ "name": "constant.character.escape.tyr", "match": "\\\\." }
 					]
 				},
 				{
@@ -101,179 +62,84 @@
 					"begin": "\"",
 					"end": "\"",
 					"patterns": [
-						{
-							"name": "constant.character.escape.tyr",
-							"match": "\\\\."
-						}
+						{ "name": "constant.character.escape.tyr", "match": "\\\\." }
 					]
 				}
 			]
 		},
 		"characters": {
-			"name": "constant.character.tyr",
-			"begin": "'",
-			"end": "'",
 			"patterns": [
 				{
-					"name": "constant.character.escape.tyr",
-					"match": "\\\\."
+					"name": "constant.character.tyr",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{ "name": "constant.character.escape.tyr", "match": "\\\\." }
+					]
 				}
 			]
 		},
 		"literals": {
 			"patterns": [
-				{
-					"name": "constant.numeric.integer.tyr",
-					"match": "\\b((-?(\\d+(_\\d+)*)|(0x[0-9a-fA-F]+(_[0-9a-fA-F]+)*))((i|f)(\\d+(_\\d+)*)?|L|U|(u(\\d+(_\\d+)*)?))?\\b"
-				},
-				{
-					"name": "constant.numeric.float.tyr",
-					"match": "\\b(-?(\\d+(_\\d+)*)?\\.(\\d+(_\\d+)*)+(([eE]-?(\\d+(_\\d+)*)?)?(f(\\d+(_\\d+)*)?)?))\\b|\\b(-?(\\d+(_\\d+)*)+(\\.(\\d+(_\\d+)*)?)?(([eE]-?(\\d+(_\\d+)*)?)?(f(\\d+(_\\d+)*)?)?))\\b"
-				},
-				{
-					"name": "constant.language.boolean.tyr",
-					"match": "\\b(true|false)\\b"
-				},
-				{
-					"name": "constant.language.null.tyr",
-					"match": "\\bnull\\b"
-				}
+				{ "name": "constant.numeric.float.tyr", "match": "(?:\\d+(_\\d+)*\\.\\d+(_\\d+)*|\\.\\d+(_\\d+)*)(?:[eE][-+]?\\d+(_\\d+)*)?(?:[fF]\\d*)?" },
+				{ "name": "constant.numeric.integer.tyr", "match": "(0[xX][0-9a-fA-F]+(_[0-9a-fA-F]+)*|(?:\\d+(_\\d+)*))(?:[iI]\\d*|[fF]\\d*|[uU]\\d*|L)?" },
+				{ "name": "constant.language.boolean.tyr", "match": "\\b(true|false)\\b" },
+				{ "name": "constant.language.null.tyr", "match": "\\bnull\\b" }
 			]
 		},
 		"keywords": {
 			"patterns": [
-				{
-					"name": "keyword.control.tyr",
-					"match": "\\b(break|catch|continue|do|else|finally|if|return|switch|throw|try|while)\\b"
-				},
-				{
-					"name": "keyword.operator.new-delete.tyr",
-					"match": "\\b(new|delete)\\b"
-				},
-				{
-					"name": "keyword.other.tyr",
-					"match": "\\b(def|test|with|extern)\\b"
-				}
+				{ "name": "keyword.control.tyr", "match": "\\b(break|catch|continue|do|else|finally|if|return|switch|throw|try|while)\\b" },
+				{ "name": "keyword.operator.new-delete.tyr", "match": "\\b(new|delete)\\b" },
+				{ "name": "keyword.other.tyr", "match": "\\b(def|test|with|extern)\\b" }
 			]
 		},
 		"storage": {
 			"patterns": [
-				{
-					"name": "storage.type.variable.tyr",
-					"match": "\\b(var|val|let)\\b"
-				}
+				{ "name": "storage.type.variable.tyr", "match": "\\b(var|val|let)\\b" }
 			]
 		},
 		"types": {
 			"patterns": [
-				{
-					"name": "storage.type.class.tyr",
-					"match": "\\b(class|interface)\\b"
-				},
-				{
-					"name": "storage.type.enum.tyr",
-					"match": "\\benum\\b"
-				},
-				{
-					"name": "storage.type.property.tyr",
-					"match": "\\bproperty\\b"
-				},
-				{
-					"name": "storage.type.tyr",
-					"match": "\\btype\\b"
-				}
+				{ "name": "storage.type.class.tyr", "match": "\\b(class|interface)\\b" },
+				{ "name": "storage.type.enum.tyr", "match": "\\benum\\b" },
+				{ "name": "storage.type.property.tyr", "match": "\\bproperty\\b" },
+				{ "name": "storage.type.tyr", "match": "\\btype\\b" }
 			]
 		},
 		"modifiers": {
 			"patterns": [
-				{
-					"name": "storage.modifier.access.tyr",
-					"match": "\\b(public|protected|private)\\b"
-				},
-				{
-					"name": "storage.modifier.override.tyr",
-					"match": "\\boverride\\b"
-				}
+				{ "name": "storage.modifier.access.tyr", "match": "\\b(public|protected|private)\\b" },
+				{ "name": "storage.modifier.override.tyr", "match": "\\boverride\\b" }
 			]
 		},
 		"punctuation": {
 			"patterns": [
-				{
-					"name": "punctuation.definition.block.begin.tyr",
-					"match": "\\{"
-				},
-				{
-					"name": "punctuation.definition.block.end.tyr",
-					"match": "\\}"
-				},
-				{
-					"name": "punctuation.definition.parameters.begin.tyr",
-					"match": "\\("
-				},
-				{
-					"name": "punctuation.definition.parameters.end.tyr",
-					"match": "\\)"
-				},
-				{
-					"name": "punctuation.definition.brackets.begin.tyr",
-					"match": "\\["
-				},
-				{
-					"name": "punctuation.definition.brackets.end.tyr",
-					"match": "\\]"
-				},
-				{
-					"name": "punctuation.separator.tyr",
-					"match": ","
-				},
-				{
-					"name": "punctuation.terminator.tyr",
-					"match": ";"
-				},
-				{
-					"name": "punctuation.accessor.tyr",
-					"match": "\\."
-				}
+				{ "name": "punctuation.definition.block.begin.tyr", "match": "\\{" },
+				{ "name": "punctuation.definition.block.end.tyr", "match": "\\}" },
+				{ "name": "punctuation.definition.parameters.begin.tyr", "match": "\\(" },
+				{ "name": "punctuation.definition.parameters.end.tyr", "match": "\\)" },
+				{ "name": "punctuation.definition.brackets.begin.tyr", "match": "\\[" },
+				{ "name": "punctuation.definition.brackets.end.tyr", "match": "\\]" },
+				{ "name": "punctuation.separator.tyr", "match": "," },
+				{ "name": "punctuation.terminator.tyr", "match": ";" },
+				{ "name": "punctuation.accessor.tyr", "match": "\\." }
 			]
 		},
 		"operators": {
 			"patterns": [
-				{
-					"name": "keyword.operator.assignment.tyr",
-					"match": ":="
-				},
-				{
-					"name": "keyword.operator.assignment.tyr",
-					"match": "="
-				},
-				{
-					"name": "keyword.operator.type.tyr",
-					"match": "<:"
-				},
-				{
-					"name": "keyword.operator.as.tyr",
-					"match": ":"
-				},
-				{
-					"name": "keyword.operator.tyr",
-					"match": "[\\u0021\\u0023-\\u0026\\u002a\\u002b\\u002d\\u002f\\u003c\\u003e-\\u0040\\u005c\\u005e\\u007c\\u007e]+"
-				}
+				{ "name": "keyword.operator.assignment.tyr", "match": ":=" },
+				{ "name": "keyword.operator.assignment.tyr", "match": "=" },
+				{ "name": "keyword.operator.type.tyr", "match": "<:" },
+				{ "name": "keyword.operator.as.tyr", "match": ":" },
+				{ "name": "keyword.operator.tyr", "match": "[!#%&*+\\\\/<=>@\\^|~-]+" }
 			]
 		},
 		"identifiers": {
 			"patterns": [
-				{
-					"name": "variable.other.backtick.tyr",
-					"match": "`[^`]+`"
-				},
-				{
-					"name": "variable.other.tyr",
-					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
-				},
-				{
-					"name": "variable.language.blank.tyr",
-					"match": "\\b_\\b"
-				}
+				{ "name": "variable.other.backtick.tyr", "match": "`[^`]+`" },
+				{ "name": "variable.other.tyr", "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b" },
+				{ "name": "variable.language.blank.tyr", "match": "_" }
 			]
 		}
 	}
